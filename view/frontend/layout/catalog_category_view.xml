@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="css/childcategorylist.css" />
+	</head>
+	<body>
+		<referenceContainer name="category.view.container">
+			<block as="category_childcategorylist" class="Kreativsoehne\ChildCategoryList\Block\Category\ChildCategoryList" name="category.childcategorylist" template="Kreativsoehne_ChildCategoryList::category/childcategorylist.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

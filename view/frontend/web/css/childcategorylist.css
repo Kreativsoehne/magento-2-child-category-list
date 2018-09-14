@@ -1,0 +1,8 @@
+.child-category-list .item {
+    display: inline-block;
+    width: 24%;
+}
+
+.child-category-list .item .inner {
+    padding: 50px;
+}

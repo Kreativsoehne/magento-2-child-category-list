@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var $block \Kreativsoehne\ChildCategoryList\Block\Category\ChildCategoryList
+ */
+
+$childCategories    = $this->getChildCategoryCollection();
+$objectManager      = \Magento\Framework\App\ObjectManager::getInstance();
+?>
+<?php if (count($childCategories) > 0): ?>
+    <div class="block-content child-category-list">
+        <ul>
+            <?php foreach($childCategories as $category):?>
+                <?php $_category = $objectManager->create('Magento\Catalog\Model\Category')->load($category->getId()); ?>
+                <li class="category item">
+                    <div class="inner">
+                        <a href="<?php echo $block->escapeUrl($category->getUrl()) ?>" title="<?php echo $block->escapeHtml($category->getName()) ?>">
+                            <?php if($_category->getImageUrl()):?>
+                                <img src="<?php echo $block->escapeUrl($_category->getImageUrl()) ?>" alt="<?php echo $block->escapeHtml($category->getName()) ?>" />
+                            <?php endif;?>
+                            <span class="cat-title"><?php echo $block->escapeHtml($category->getName()) ?></span>
+                        </a>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
